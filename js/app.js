@@ -69,7 +69,7 @@ const flipCard = (card) => {
   }
 }
 
-// FUNCTION 5 - compare cards
+// FUNCTION 5 - compare cards match
 const itsAMatch = () => {
   const [card1, card2] = playerPicks;
 
