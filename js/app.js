@@ -87,7 +87,7 @@ const flipCard = (card) => {
   } 
 
   if (!timerStart) {
-    timeStarted = true;
+    timerStart = true;
     startTime();
   }
   
