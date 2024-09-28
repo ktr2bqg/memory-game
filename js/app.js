@@ -28,6 +28,7 @@ function init() {
   timeLeft = 15;
   clearInterval(timer);
   timerEl.textContent = `Time Left: ${timeLeft}s`;
+  startCards();
   timerStart = false;
 
   const shuffledColors = shuffleColors(makePairs(colors));
@@ -78,7 +79,7 @@ const startTime = () => {
 
 // FUNCTION 4 - clicking cards
 const flipCard = (card) => {
-  if (card.isFacedown && playerPicks.length < 2) {
+  if (card.isFacedown && playerPicks.length < 2 && timeLeft > 0) {
     card.isFacedown = false; // change to face-up
     playerPicks.push(card);
     card.style.backgroundColor = card.color; // change background color
@@ -111,12 +112,12 @@ const itsAMatch = () => {
     if (matchedCards === colors.length) {
       messageEl.textContent = "You Win!";
       console.log("You Win!");
+      stopCards();
     }
   } else {
     // different color cards match
     messageEl.textContent = "Not a Match";
     console.log("Not a Match")
-  }
 
   setTimeout(() => {
     card1.isFacedown = true; 
@@ -126,19 +127,26 @@ const itsAMatch = () => {
     card1.classList.remove("flipped");
     card2.classList.remove("flipped");
   }, 400);
+}
 
-  playerPicks = []
-
+  playerPicks = [];
 };
 
-
-init();
-
 /*------Event Listeners------*/
-cardEls.forEach((card) => {
+const startCards = () => {cardEls.forEach((card) => {
   card.addEventListener("click", function () {
     flipCard(card);
+    });
   });
-});
+};
+
+const stopCards = () => {cardEls.forEach((card) => {
+  card.removeEventListener("click", function () {
+    flipCard(card);
+    });
+  });
+};
+
+init();
 
 playBtn.addEventListener("click", init)
