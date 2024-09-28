@@ -1,6 +1,5 @@
 /*------Constants------*/
 const cardEls = document.querySelectorAll(".cards");
-console.log(cardEls);
 const timerEl = document.querySelector("h2");
 const messageEl = document.querySelector("h3");
 const playBtn = document.getElementById("play-again");
@@ -16,6 +15,7 @@ let colors = [
 let playerPicks = [];
 let matchedCards = 0;
 let timer;
+let timeLeft = 15;
 
 /*------Functions------*/
 
@@ -24,6 +24,11 @@ function init() {
   playerPicks = [];
   messageEl.textContent = "";
   matchedCards = 0;
+
+  timeLeft = 15;
+  clearInterval(timer);
+  timerEl.textContent = `Time Left: ${timeLeft}s`;
+  timerStart = false;
 
   const shuffledColors = shuffleColors(makePairs(colors));
 
@@ -53,6 +58,24 @@ function shuffleColors(colors) {
   return colors;
 }
 
+const startTime = () => {
+  timer = setInterval(() => {
+    timeLeft--;
+    timerEl.textContent = `Time Left: ${timeLeft}s`;
+
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      messageEl.textContent = "Time's up! You Lose!";
+      console.log("Time's up! You Lose!");
+
+      cardEls.forEach((card) => {
+        card.isFacedown = true;
+        card.style.backgroundColor = "";
+      });
+    }
+  }, 1000);
+};
+
 // FUNCTION 4 - clicking cards
 const flipCard = (card) => {
   if (card.isFacedown && playerPicks.length < 2) {
@@ -62,6 +85,11 @@ const flipCard = (card) => {
     card.classList.add("flipped")
     console.log("Card flipped to face up");
   } 
+
+  if (!timerStart) {
+    timeStarted = true;
+    startTime();
+  }
   
   // when player clicks two cards itsAMatch() will run
   if (playerPicks.length === 2) {
@@ -95,6 +123,8 @@ const itsAMatch = () => {
     card2.isFacedown = true;
     card1.style.backgroundColor = "";
     card2.style.backgroundColor = "";
+    card1.classList.remove("flipped");
+    card2.classList.remove("flipped");
   }, 400);
 
   playerPicks = []
