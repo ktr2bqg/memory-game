@@ -44,6 +44,7 @@ function init() {
 // FUNCTION 2 - creating color pairs
 const makePairs = (colors) => {
   const pairs = []
+
   colors.forEach((color) => {
     pairs.push(color, color);
   });
@@ -59,6 +60,7 @@ function shuffleColors(colors) {
   return colors;
 }
 
+// FUNCTION 4 - timer countdown
 const startTime = () => {
   timer = setInterval(() => {
     timeLeft--;
@@ -77,7 +79,7 @@ const startTime = () => {
   }, 1000);
 };
 
-// FUNCTION 4 - clicking cards
+// FUNCTION 5 - clicking cards
 const flipCard = (card) => {
   if (card.isFacedown && playerPicks.length < 2 && timeLeft > 0) {
     card.isFacedown = false; // change to face-up
@@ -98,7 +100,7 @@ const flipCard = (card) => {
   }
 }
 
-// FUNCTION 5 - compare cards match
+// FUNCTION 6 - compare cards match
 const itsAMatch = () => {
   const [card1, card2] = playerPicks;
 
@@ -111,13 +113,11 @@ const itsAMatch = () => {
     // the board is all matching cards
     if (matchedCards === colors.length) {
       messageEl.textContent = "You Win!";
-      console.log("You Win!");
-      stopCards();
+      confetti.start(2000)
     }
   } else {
     // different color cards match
     messageEl.textContent = "Not a Match";
-    console.log("Not a Match")
 
   setTimeout(() => {
     card1.isFacedown = true; 
