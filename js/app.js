@@ -70,7 +70,6 @@ const flipCard = (card) => {
     playerPicks.push(card);
     card.style.backgroundColor = card.color;
     card.classList.add("flipped")
-    console.log("Card flipped to face up");
   } 
 
   if (!timerStart) {
@@ -88,7 +87,6 @@ const itsAMatch = () => {
 
   if (card1.color === card2.color) {
     messageEl.textContent = "It's a Match!";
-    console.log("It's a Match!");
     matchedCards++
 
     if (matchedCards === colors.length) {
