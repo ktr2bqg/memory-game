@@ -1,19 +1,14 @@
-/*------Constants------*/
 const cardEls = document.querySelectorAll(".cards");
 const timerEl = document.querySelector("h2");
 const messageEl = document.querySelector("h3");
 const playBtn = document.getElementById("play-again");
 
-/*------Variables------*/
 let colors = ["#051923", "#003554", "#006494", "#0582ca", "#00a6fb"];
 let playerPicks = [];
 let matchedCards = 0;
 let timer;
 let timeLeft = 15;
 
-/*------Functions------*/
-
-// INITLIZE FUNCTION - initial state of the board/ refresh state
 function init() {
   playerPicks = [];
   matchedCards = 0;
@@ -34,7 +29,6 @@ function init() {
   });
 }
 
-// FUNCTION 2 - creating color pairs
 const makePairs = (colors) => {
   const pairs = []
 
@@ -44,7 +38,6 @@ const makePairs = (colors) => {
   return pairs;
 }
 
-// FUNCTION 3 - shuffling color array
 function shuffleColors(colors) {
   for (let i = colors.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -53,7 +46,6 @@ function shuffleColors(colors) {
   return colors;
 }
 
-// FUNCTION 4 - timer countdown
 const startTime = () => {
   timer = setInterval(() => {
     timeLeft--;
@@ -72,12 +64,11 @@ const startTime = () => {
   }, 1000);
 };
 
-// FUNCTION 5 - clicking cards
 const flipCard = (card) => {
   if (card.isFacedown && playerPicks.length < 2 && timeLeft > 0) {
-    card.isFacedown = false; // change to face-up
+    card.isFacedown = false;
     playerPicks.push(card);
-    card.style.backgroundColor = card.color; // change background color
+    card.style.backgroundColor = card.color;
     card.classList.add("flipped")
     console.log("Card flipped to face up");
   } 
@@ -87,23 +78,19 @@ const flipCard = (card) => {
     startTime();
   }
   
-  // when player clicks two cards itsAMatch() will run
   if (playerPicks.length === 2) {
     itsAMatch()
   }
 }
 
-// FUNCTION 6 - compare cards match
 const itsAMatch = () => {
   const [card1, card2] = playerPicks;
 
-  // same color cards match
   if (card1.color === card2.color) {
     messageEl.textContent = "It's a Match!";
     console.log("It's a Match!");
     matchedCards++
 
-    // the board is all matching cards
     if (matchedCards === colors.length) {
       clearInterval(timer)
       messageEl.textContent = "You Win!";
@@ -111,7 +98,6 @@ const itsAMatch = () => {
       stopCards();
     }
   } else {
-    // different color cards match
     messageEl.textContent = "Not a Match";
 
   setTimeout(() => {
@@ -127,7 +113,6 @@ const itsAMatch = () => {
   playerPicks = [];
 };
 
-/*------Event Listeners------*/
 const startCards = () => {cardEls.forEach((card) => {
   card.addEventListener("click", function () {
     flipCard(card);
