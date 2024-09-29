@@ -5,13 +5,7 @@ const messageEl = document.querySelector("h3");
 const playBtn = document.getElementById("play-again");
 
 /*------Variables------*/
-let colors = [
-  "red",
-  "blue",
-  "green",
-  "yellow",
-  "purple"
-];
+let colors = ["#051923", "#003554", "#006494", "#0582ca", "#00a6fb"];
 let playerPicks = [];
 let matchedCards = 0;
 let timer;
@@ -22,7 +16,6 @@ let timeLeft = 15;
 // INITLIZE FUNCTION - initial state of the board/ refresh state
 function init() {
   playerPicks = [];
-  messageEl.textContent = "";
   matchedCards = 0;
 
   timeLeft = 15;
@@ -69,8 +62,8 @@ const startTime = () => {
     if (timeLeft <= 0) {
       clearInterval(timer);
       messageEl.textContent = "Time's up! You Lose!";
-      console.log("Time's up! You Lose!");
-
+      stopCards();
+    
       cardEls.forEach((card) => {
         card.isFacedown = true;
         card.style.backgroundColor = "";
@@ -112,8 +105,10 @@ const itsAMatch = () => {
 
     // the board is all matching cards
     if (matchedCards === colors.length) {
+      clearInterval(timer)
       messageEl.textContent = "You Win!";
       confetti.start(2000)
+      stopCards();
     }
   } else {
     // different color cards match
