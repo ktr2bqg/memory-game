@@ -22,7 +22,7 @@ function init() {
   const shuffledColors = shuffleColors(makePairs(colors));
 
   cardEls.forEach((card, idx) => {
-    card.isFacedown = true; // flip card up
+    card.isFacedown = true;
     card.style.backgroundColor = "";
     card.color = shuffledColors[idx];
     card.classList.remove("flipped");
