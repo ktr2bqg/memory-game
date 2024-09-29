@@ -12,6 +12,7 @@ let timeLeft = 15;
 function init() {
   playerPicks = [];
   matchedCards = 0;
+  messageEl.textContent = "🩵 🩵 Choose a Match 🩵 🩵";
 
   timeLeft = 15;
   clearInterval(timer);
@@ -30,7 +31,7 @@ function init() {
 }
 
 const makePairs = (colors) => {
-  const pairs = []
+  const pairs = [];
 
   colors.forEach((color) => {
     pairs.push(color, color);
@@ -53,7 +54,7 @@ const startTime = () => {
 
     if (timeLeft <= 0) {
       clearInterval(timer);
-      messageEl.textContent = "Time's up! You Lose!";
+      messageEl.textContent = "Time's up! You Lose! 😕";
       stopCards();
     
       cardEls.forEach((card) => {
@@ -69,7 +70,8 @@ const flipCard = (card) => {
     card.isFacedown = false;
     playerPicks.push(card);
     card.style.backgroundColor = card.color;
-    card.classList.add("flipped")
+    card.classList.add("flipped");
+
   } 
 
   if (!timerStart) {
@@ -78,7 +80,7 @@ const flipCard = (card) => {
   }
   
   if (playerPicks.length === 2) {
-    itsAMatch()
+    itsAMatch();
   }
 }
 
@@ -86,17 +88,17 @@ const itsAMatch = () => {
   const [card1, card2] = playerPicks;
 
   if (card1.color === card2.color) {
-    messageEl.textContent = "It's a Match!";
-    matchedCards++
+    messageEl.textContent = "Great Job! 🥳 It's a Match!!";
+    matchedCards++;
 
     if (matchedCards === colors.length) {
-      clearInterval(timer)
-      messageEl.textContent = "You Win!";
-      confetti.start(2000)
+      clearInterval(timer);
+      messageEl.textContent = "You Win! 🎉";
+      confetti.start(2000);
       stopCards();
     }
   } else {
-    messageEl.textContent = "Not a Match";
+    messageEl.textContent = "Not Quite 🤔 Try Again!!";
 
   setTimeout(() => {
     card1.isFacedown = true; 
