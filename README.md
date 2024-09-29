@@ -1,4 +1,4 @@
-# 💙 HUES OF BLUES 💙
+# HUES OF BLUES 💙💙
 <img alt="hues-of-blues-winning-photo" width="1109" alt="8A7AA2C0-A3B9-4775-90AF-B11ED23675FB" src="https://github.com/user-attachments/assets/214a5b04-8cc0-4847-b0c4-ec23a20b59eb">
 
 #### Hues of Blues is an aesthetic memory game that challenges your ability to recognize and remember various shades of blue, my favorite color.
