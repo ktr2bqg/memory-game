@@ -7,13 +7,13 @@
 ##### I created a memory game because I’ve always enjoyed playing them, whether with friends or on my own. I love memory games because they challenge your ability to pay attention to detail while also providing a fun, thrilling experience. 
 
 ## Getting Started:
-https://docs.google.com/document/d/1pVcJsQ8F68Ibu4VGIEaVrg2upU6kjF3P0Owl1mflNXU/edit
+[Planning Deliverable]https://docs.google.com/document/d/1pVcJsQ8F68Ibu4VGIEaVrg2upU6kjF3P0Owl1mflNXU/edit
 
 ## You Can Play My Game Here: 
 https://ktr2bqg.github.io/memory-game/
 
 ## Attributions:
-
+[Coolers Palettes]https://coolors.co/palettes/popular/monochromatic
 
 ## Technologies Used:
 1. **Javascript**
