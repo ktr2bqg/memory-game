@@ -13,10 +13,11 @@
 https://ktr2bqg.github.io/memory-game/
 
 ## Attributions:
-[Coolers](https://coolors.co/palettes/popular/monochromatic)
-[Functions-MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
-[.classList() Property-MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
-[Fisher-Yates Method](https://stackoverflow.com/questions/59810241/how-to-fisher-yates-shuffle-a-javascript-array)
+**[Coolers] (https://coolors.co/palettes/popular/monochromatic)**
+**[Functions-MDN] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)**
+**[.classList() Property-MDN] (https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)**
+**[Fisher-Yates Method] (https://stackoverflow.com/questions/59810241/how-to-fisher-yates-shuffle-a-javascript-array)**
+**[setTimeout() Method- MDN] (https://developer.mozilla.org/en-US/docs/Web/API/setTimeout)**
 
 
 ## Technologies Used:
