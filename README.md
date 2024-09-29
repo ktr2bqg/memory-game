@@ -7,13 +7,17 @@
 ##### I created a memory game because I’ve always enjoyed playing them, whether with friends or on my own. I love memory games because they challenge your ability to pay attention to detail while also providing a fun, thrilling experience. 
 
 ## Getting Started:
-[Planning Deliverable]https://docs.google.com/document/d/1pVcJsQ8F68Ibu4VGIEaVrg2upU6kjF3P0Owl1mflNXU/edit
+[Planning Deliverable](https://docs.google.com/document/d/1pVcJsQ8F68Ibu4VGIEaVrg2upU6kjF3P0Owl1mflNXU/edit)
 
 ## You Can Play My Game Here: 
 https://ktr2bqg.github.io/memory-game/
 
 ## Attributions:
-[Coolers Palettes]https://coolors.co/palettes/popular/monochromatic
+[Coolers](https://coolors.co/palettes/popular/monochromatic)
+[Functions-MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+[.classList() Property-MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+[Fisher-Yates Method](https://stackoverflow.com/questions/59810241/how-to-fisher-yates-shuffle-a-javascript-array)
+
 
 ## Technologies Used:
 1. **Javascript**
