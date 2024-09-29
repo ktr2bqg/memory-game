@@ -12,7 +12,7 @@
 ## You Can Play My Game Here: 
 https://ktr2bqg.github.io/memory-game/
 
-## Attributions:
+## External Resources:
 1. **[Coolers](https://coolors.co/palettes/popular/monochromatic)**
 2. **[Functions-MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)**
 3. **[.classList() Property-MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)**
